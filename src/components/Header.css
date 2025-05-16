@@ -1,0 +1,211 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Banner */
+.top-banner {
+  background: linear-gradient(to right, #ffffff, #e3f2fd);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nepali-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a237e;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #455a64;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+/* Geometric Shapes */
+.geometric-shapes {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.shape {
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.shape:hover {
+  transform: rotate(225deg);
+}
+
+.shape.blue {
+  background: #1a237e;
+}
+
+.shape.white {
+  background: white;
+  border: 2px solid #1a237e;
+}
+
+.shape.orange {
+  background: #ff6f00;
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Nepali Slogan */
+.nepali-slogan {
+  text-align: right;
+  color: #1a237e;
+  font-weight: 500;
+}
+
+.nepali-slogan p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1.1rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #1a237e;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: opacity 0.3s;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Bar */
+.main-nav {
+  background: #1a237e;
+  padding: 0.8rem 2rem;
+}
+
+.nav-links {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .top-banner {
+    padding: 1rem;
+  }
+  
+  .geometric-shapes {
+    display: none;
+  }
+  
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .logo-section {
+    gap: 1rem;
+  }
+  
+  .nepali-slogan {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-banner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nepali-logo {
+    font-size: 1.8rem;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem;
+  }
+}

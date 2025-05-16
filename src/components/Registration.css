@@ -1,0 +1,155 @@
+.registration-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.registration-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.form-section h3 {
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1a237e;
+}
+
+.form-group input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.form-group input[type="file"] {
+  padding: 0.5rem;
+  border: none;
+}
+
+.form-group input[type="date"] {
+  font-family: inherit;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  background: #1a237e;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background: #283593;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 1rem;
+  }
+
+  .registration-form {
+    padding: 1.5rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* Custom File Input Styling */
+.form-group input[type="file"] {
+  position: relative;
+  padding: 0.8rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  background: #1a237e;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: background-color 0.3s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: #283593;
+}
