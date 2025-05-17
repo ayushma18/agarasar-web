@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when clicking outside
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="top-banner">
@@ -47,17 +71,28 @@ function Header() {
       </div>
 
       <nav className="main-nav">
-        <ul className="nav-links">
-          <li><Link to="/">HOME</Link></li>
-          <li><Link to="/about">ABOUT US</Link></li>
-          <li><Link to="/services">SERVICES</Link></li>
-          <li><Link to="/news">NEWS & ACTIVITIES</Link></li>
-          <li><Link to="/gallery">GALLERY</Link></li>
-          <li><Link to="/login">LOGIN</Link></li>
-          <li><Link to="/register">REGISTER</Link></li>
-          <li><Link to="/contact">CONTACT US</Link></li>
+        <button 
+          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+          onClick={toggleMenu} 
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li><Link to="/" onClick={closeMenu}>HOME</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>ABOUT US</Link></li>
+          <li><Link to="/services" onClick={closeMenu}>SERVICES</Link></li>
+          <li><Link to="/news" onClick={closeMenu}>NEWS & ACTIVITIES</Link></li>
+          <li><Link to="/gallery" onClick={closeMenu}>GALLERY</Link></li>
+          <li><Link to="/login" onClick={closeMenu}>LOGIN</Link></li>
+          <li><Link to="/register" onClick={closeMenu}>REGISTER</Link></li>
+          <li><Link to="/contact" onClick={closeMenu}>CONTACT US</Link></li>
         </ul>
       </nav>
+      {isMenuOpen && <div className="nav-overlay" onClick={closeMenu}></div>}
     </header>
   );
 }

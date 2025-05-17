@@ -11,7 +11,7 @@ function Footer() {
           <ul>
             <li>
               <span className="icon">📍</span>
-              <span>Libali - 6, Bhaktapur</span>
+              <span>Chabahil, Kathmandu</span>
             </li>
             <li>
               <span className="icon">📞</span>
