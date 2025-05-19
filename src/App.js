@@ -7,6 +7,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Registration from './components/Registration';
+import Login from './components/Login';
+import AdminDashboard from './components/AdminDashboard';
 import './App.css';
 
 const News = () => {
@@ -31,19 +33,27 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/register" element={<Registration />} />
-          </Routes>
-        </main>
-        <Footer />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin/*" element={<AdminDashboard />} />
+          <Route path="*" element={
+            <>
+              <Header />
+              <main className="main-content">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/news" element={<News />} />
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/register" element={<Registration />} />
+                </Routes>
+              </main>
+              <Footer />
+            </>
+          } />
+        </Routes>
       </div>
     </Router>
   );
