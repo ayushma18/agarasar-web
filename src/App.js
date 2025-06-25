@@ -9,22 +9,21 @@ import Contact from './components/Contact';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import AdminDashboard from './components/AdminDashboard';
-import './App.css';
 
 const News = () => {
   return (
-    <div className="news-page">
-      <h1>News & Activities</h1>
-      <p>Stay updated with our latest news and activities.</p>
+    <div className="container-custom py-8">
+      <h1 className="text-4xl font-bold text-primary mb-4">News & Activities</h1>
+      <p className="text-lg text-gray-600">Stay updated with our latest news and activities.</p>
     </div>
   );
 };
 
 const Gallery = () => {
   return (
-    <div className="gallery-page">
-      <h1>Gallery</h1>
-      <p>View our collection of photos from various events and activities.</p>
+    <div className="container-custom py-8">
+      <h1 className="text-4xl font-bold text-primary mb-4">Gallery</h1>
+      <p className="text-lg text-gray-600">View our collection of photos from various events and activities.</p>
     </div>
   );
 };
@@ -32,14 +31,14 @@ const Gallery = () => {
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className="min-h-screen flex flex-col">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="*" element={
             <>
               <Header />
-              <main className="main-content">
+              <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />

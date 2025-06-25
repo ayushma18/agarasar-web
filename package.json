@@ -10,7 +10,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +36,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.0",
+    "autoprefixer": "^10.4.16",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^6.11.0",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "source-map-loader": "^5.0.0",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.99.9",
+    "webpack-dev-server": "^5.2.2"
   }
 }

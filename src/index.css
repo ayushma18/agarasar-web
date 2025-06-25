@@ -1,13 +1,409 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    @apply antialiased font-sans;
+    font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: #222222;
+    background-color: #ffffff;
+  }
+
+  /* Modern typography for cooperative style */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+    letter-spacing: -0.02em;
+    color: #222222;
+  }
+
+  /* Ensure good contrast and readability */
+  p {
+    @apply leading-relaxed;
+    color: #222222;
+    font-size: 16px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Container for consistent max-width */
+  .container-cooperative {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Modern cooperative button components */
+  .btn-primary {
+    @apply bg-accent hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg;
+    font-size: 16px;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1;
+    font-size: 16px;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 rounded-lg transition-all duration-300;
+    font-size: 16px;
+  }
+
+  /* Modern card components */
+  .card-modern {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-2 hover:scale-105 transform transition-all duration-300;
+  }
+
+  /* Section padding - 80px top & bottom as specified */
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  /* Modern animations */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  /* Blob animation for hero background */
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Blob keyframes */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@layer utilities {
+  /* Devanagari font styling */
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+
+  /* Navigation Typography - 16-18px as specified */
+  .nav-text {
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+  }
+
+  /* Hero Section Typography - 48-52px for title, 18-20px for subtitle */
+  .hero-title {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: 19px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin: 16px auto;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Section Headings - 24-32px for section titles */
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #222222;
+  }
+
+  /* Service Card Titles - 22px */
+  .service-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #222222;
+  }
+
+  /* Body Text - 16-18px paragraphs */
+  .body-text {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #222222;
+  }
+
+  /* Large body text for hero and important sections */
+  .body-text-lg {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #222222;
+  }
+
+  /* Typography specifications for cooperative website */
+  
+  /* Headings: 28px-32px, bold */
+  .heading-main {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Paragraph text: 16px-18px, regular, line-height: 1.6 */
+  .paragraph-main {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  /* Cooperative typography sizes */
+  .text-hero-cooperative {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    letter-spacing: -0.02em;
+  }
+
+  .text-subtitle-cooperative {
+    @apply text-lg md:text-xl lg:text-2xl font-light;
+    line-height: 1.5;
+  }
+
+  .text-section-title-cooperative {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  /* Cooperative color utilities */
+  .text-cooperative-primary {
+    color: #1E3A8A;
+  }
+
+  .bg-cooperative-primary {
+    background-color: #1E3A8A;
+  }
+
+  .border-cooperative-primary {
+    border-color: #1E3A8A;
+  }
+
+  /* Modern overlay effects */
+  .overlay-blue {
+    background: linear-gradient(135deg, rgba(0, 59, 91, 0.8) 0%, rgba(0, 42, 68, 0.7) 100%);
+  }
+
+  .overlay-dark {
+    background: linear-gradient(135deg, rgba(0, 42, 68, 0.9) 0%, rgba(0, 35, 51, 0.8) 100%);
+  }
+
+  /* Navbar styles */
+  .navbar-transparent {
+    background: rgba(0, 59, 91, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-solid {
+    background: #003b5b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth scrolling utilities */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #1E3A8A;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #1E3A8A;
+  color: white;
+}
+
+/* Focus styles for accessibility */
+.focus-cooperative {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+/* Additional modern animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #003b5b 0%, #00a65a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced button hover effects */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 166, 90, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 59, 91, 0.2);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Modern card hover effects */
+.card-modern:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading animation for images */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
