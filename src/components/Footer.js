@@ -40,29 +40,29 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6 text-orange-400">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#calendar" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Annual Calendar
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#links" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Important Links
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#register" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Register
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#login" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Login
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Contact Us
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -72,29 +72,29 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6 text-orange-400">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#fund-transfer" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Fund Transfer
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#saving-scheme" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Saving Scheme
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#loan-schemes" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Loan Schemes
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#digital-banking" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Digital Banking
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#investment" className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                <button className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                   Investment Plans
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -119,15 +119,15 @@ const Footer = () => {
               
               {/* Social Media Icons */}
               <div className="flex space-x-3 pt-4">
-                <a href="#" className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                <button className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                   <span className="text-white text-sm font-bold">f</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                </button>
+                <button className="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                   <span className="text-white text-sm font-bold">t</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                </button>
+                <button className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
                   <span className="text-white text-sm font-bold">ig</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>

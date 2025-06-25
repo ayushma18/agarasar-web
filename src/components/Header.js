@@ -108,18 +108,18 @@ function Header() {
               
               {/* Social Media Icons */}
               <div className="flex space-x-2">
-                <a href="#" className="w-8 h-8 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-300">
+                <button className="w-8 h-8 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors duration-300">
                   <span className="text-white text-xs font-bold">f</span>
-                </a>
-                <a href="#" className="w-8 h-8 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-300">
+                </button>
+                <button className="w-8 h-8 bg-blue-400 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-300">
                   <span className="text-white text-xs font-bold">t</span>
-                </a>
-                <a href="#" className="w-8 h-8 bg-blue-700 hover:bg-blue-800 rounded-full flex items-center justify-center transition-colors duration-300">
+                </button>
+                <button className="w-8 h-8 bg-blue-700 hover:bg-blue-800 rounded-full flex items-center justify-center transition-colors duration-300">
                   <span className="text-white text-xs font-bold">in</span>
-                </a>
-                <a href="#" className="w-8 h-8 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                </button>
+                <button className="w-8 h-8 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors duration-300">
                   <span className="text-white text-xs font-bold">ig</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>

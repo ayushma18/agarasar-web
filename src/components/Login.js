@@ -100,7 +100,7 @@ function Login() {
                   <input type="checkbox" className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200" />
                   <span className="ml-2 text-gray-600">Remember me</span>
                 </label>
-                <a href="#" className="text-blue-600 hover:text-blue-500">Forgot password?</a>
+                <button className="text-blue-600 hover:text-blue-500">Forgot password?</button>
               </div>
 
               <button
