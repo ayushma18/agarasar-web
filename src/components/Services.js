@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Services = () => {
+  const [modalService, setModalService] = useState(null);
+  // Add vertical spacing between sections
+  // and increase padding for better separation
   const services = [
     {
       icon: '🏦',
@@ -60,7 +63,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-32 bg-gray-50">
-      
+
       {/* Header Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 text-center">
@@ -80,18 +83,24 @@ const Services = () => {
             {services.map((service, index) => (
               <div key={index} className="group">
                 <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                  
+
                   {/* Service Icon */}
                   <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
                   </div>
-                  
+
                   {/* Service Title */}
                   <h3 className="text-2xl font-bold mb-4 text-slate-800">{service.title}</h3>
-                  
+
                   {/* Service Description */}
                   <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-                  
+                  {service.learnMore && (
+                    <div className="bg-blue-50 border-l-4 border-[#1E3A8A] p-4 rounded-lg mb-4 mt-2">
+                      <h4 className="text-[#1E3A8A] font-semibold mb-1">Learn More</h4>
+                      <p className="text-gray-700 text-sm">{service.learnMore}</p>
+                    </div>
+                  )}
+
                   {/* Service Features */}
                   <div className="space-y-2">
                     <h4 className="font-semibold text-slate-800 mb-3">Key Features:</h4>
@@ -104,10 +113,13 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   {/* Action Button */}
                   <div className="mt-8">
-                    <button className="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    <button
+                      className="w-full bg-[#1E3A8A] hover:bg-[#2563EB] text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+                      onClick={() => setModalService(service)}
+                    >
                       Learn More
                     </button>
                   </div>
@@ -119,19 +131,18 @@ const Services = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-slate-800 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+      <section className="py-16 bg-gradient-to-r from-[#2563EB] via-[#1E3A8A] to-[#FB923C] text-white rounded-3xl mx-4 md:mx-auto max-w-4xl shadow-xl my-16">
+        <div className="container mx-auto px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-lg">Ready to Get Started?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto font-medium drop-shadow">
             Join thousands of satisfied customers who trust अग्रसर सहकारी for their financial needs.
             Contact us today to learn more about our services and how we can help you achieve your financial goals.
           </p>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-400 hover:bg-orange-500 text-slate-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="bg-white text-[#1E3A8A] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-blue-100 hover:text-[#2563EB] transition-all duration-300 transform hover:scale-105 border-2 border-white">
               Contact Us Today
             </button>
-            <button className="border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-slate-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+            <button className="bg-white/10 border-2 border-white text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-[#FB923C] transition-all duration-300">
               Schedule a Consultation
             </button>
           </div>
@@ -149,7 +160,7 @@ const Services = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
+
             {/* Benefit 1 */}
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="container mx-auto px-6 py-12 relative z-10">
         <div className="grid md:grid-cols-4 gap-8">
-          
+
           {/* Office Address Column */}
           <div>
             <h3 className="text-xl font-bold mb-6 text-orange-400">Office Address</h3>
@@ -20,7 +20,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <span className="text-orange-400 mt-1">📍</span>
                 <div>
-                  <p className="text-gray-300">Libali - 6, Bhaktapur</p>
+                  <p className="text-gray-300">Chabahil, Kathmandu</p>
                   <p className="text-gray-300">Nepal</p>
                 </div>
               </div>
@@ -103,12 +103,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-orange-400">Newsletter</h3>
             <p className="text-gray-300 mb-4">Stay updated with our latest news and offers</p>
-            
+
             {/* Newsletter Form */}
             <div className="space-y-4">
               <div className="flex">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="Email Address"
                   className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none text-white placeholder-gray-400"
                 />
@@ -116,7 +116,7 @@ const Footer = () => {
                   Subscribe
                 </button>
               </div>
-              
+
               {/* Social Media Icons */}
               <div className="flex space-x-3 pt-4">
                 <button className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
@@ -145,7 +145,7 @@ const Footer = () => {
                 <div className="text-sm text-gray-400">Empowering Communities</div>
               </div>
             </div>
-            
+
             <div className="text-center md:text-right">
               <p className="text-gray-400 text-sm">
                 Copyright © 2025 अग्रसर सहकारी. All rights reserved.

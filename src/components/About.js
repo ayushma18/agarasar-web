@@ -2,87 +2,61 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-white">
-      
+    <div className="min-h-screen bg-gradient-to-br from-[#F3F4F6] via-white to-[#e0e7ff] space-y-20 pt-32">
       {/* About Us Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-primary mb-16">About Our Cooperative</h1>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Vision/Mission/Goals Box */}
-            <div className="card p-8 space-y-8">
-              {/* Our Vision */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-primary flex items-center">
-                  <span className="w-8 h-8 bg-cooperative-green rounded-full flex items-center justify-center text-white text-sm mr-3">👁️</span>
-                  Our Vision
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  To become the most trusted and innovative cooperative financial institution, 
-                  empowering our community through accessible banking solutions and fostering 
-                  sustainable economic growth for all our members.
-                </p>
-              </div>
-
-              {/* Our Mission */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-primary flex items-center">
-                  <span className="w-8 h-8 bg-cooperative-blue rounded-full flex items-center justify-center text-white text-sm mr-3">🎯</span>
-                  Our Mission
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  We are committed to providing exceptional financial services, promoting 
-                  financial literacy, and building stronger communities through transparent 
-                  governance, innovative technology, and member-centric solutions.
-                </p>
-              </div>
-
-              {/* Our Goals */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-primary flex items-center">
-                  <span className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white text-sm mr-3">🏆</span>
-                  Our Goals
-                </h3>
-                <div className="space-y-2">
-                  <p className="text-gray-700 leading-relaxed">• Expand financial inclusion across our community</p>
-                  <p className="text-gray-700 leading-relaxed">• Maintain 99%+ member satisfaction rating</p>
-                  <p className="text-gray-700 leading-relaxed">• Support 1000+ local businesses by 2025</p>
-                  <p className="text-gray-700 leading-relaxed">• Achieve sustainable growth and profitability</p>
-                </div>
+      <section className="py-28">
+        <div className="max-w-7xl mx-auto px-4 md:px-10">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            {/* Left: Image/Visual */}
+            <div className="flex-1 flex justify-center items-center mb-10 md:mb-0">
+              <div className="w-72 h-72 rounded-full shadow-2xl bg-gradient-to-tr from-[#1E3A8A] via-[#F59E0B] to-[#F3F4F6] flex items-center justify-center overflow-hidden border-8 border-white">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&q=80"
+                  alt="Agarasar Team"
+                  className="object-cover w-full h-full"
+                />
               </div>
             </div>
-
-            {/* Cooperative Overview */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-secondary mb-6">Who We Are</h2>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className="text-lg">
-                  अग्रसर सहकारी (Agrasar Sahakari) stands as a beacon of financial excellence in our community,
-                  established with the vision of creating a more inclusive and prosperous society.
-                  Since our inception, we have been dedicated to serving our members with integrity,
-                  transparency, and unwavering commitment to their financial well-being.
+            {/* Right: Content */}
+            <div className="flex-1">
+              <h1 className="text-5xl font-extrabold text-[#1E3A8A] mb-4 tracking-tight drop-shadow-sm">About Agarasar</h1>
+              <p className="text-lg text-[#F59E0B] mb-6 font-medium">Moving Forward, Together.</p>
+              <p className="text-gray-700 text-lg mb-6">
+                अग्रसर सहकारी (Agrasar Sahakari) is dedicated to empowering our community with accessible, innovative, and trustworthy financial solutions. Our mission is to help every member achieve their dreams through mutual support and modern banking.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-center text-center border-t-4 border-[#1E3A8A]">
+                  <span className="text-3xl mb-2">👁️</span>
+                  <h3 className="text-lg font-bold text-[#1E3A8A] mb-1">Vision</h3>
+                  <p className="text-gray-600 text-sm">
+                    To be Nepal’s most trusted and innovative cooperative, fostering sustainable growth for all.
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-center text-center border-t-4 border-[#F59E0B]">
+                  <span className="text-3xl mb-2">🎯</span>
+                  <h3 className="text-lg font-bold text-[#F59E0B] mb-1">Mission</h3>
+                  <p className="text-gray-600 text-sm">
+                    Deliver exceptional financial services, promote literacy, and build stronger communities with transparency and care.
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-center text-center border-t-4 border-[#1E3A8A]">
+                  <span className="text-3xl mb-2">🏆</span>
+                  <h3 className="text-lg font-bold text-[#1E3A8A] mb-1">Goals</h3>
+                  <ul className="text-gray-600 text-sm list-disc list-inside text-left">
+                    <li>Expand financial inclusion</li>
+                    <li>99%+ member satisfaction</li>
+                    <li>Support 1000+ local businesses</li>
+                    <li>Sustainable growth & profitability</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-[#F3F4F6] rounded-2xl shadow-inner p-6">
+                <h2 className="text-2xl font-bold text-[#1E3A8A] mb-2">Who We Are</h2>
+                <p className="text-gray-700 text-base mb-2">
+                  Founded on the principles of mutual support and shared prosperity, Agarasar Cooperative is more than a financial institution—we are a community partner. Our experienced team delivers a full range of banking, lending, and digital services, always putting members first.
                 </p>
-                
-                <p>
-                  Our cooperative was born from the belief that everyone deserves access to quality 
-                  financial services, regardless of their economic background. We have built our 
-                  foundation on the principles of mutual support, shared prosperity, and community 
-                  development, creating a financial ecosystem that truly serves the people.
-                </p>
-                
-                <p>
-                  With a team of experienced professionals and a member-first approach, we offer 
-                  a comprehensive range of banking services designed to meet the diverse needs of 
-                  our community. From traditional savings and lending services to modern digital 
-                  banking solutions, we continue to evolve and innovate while staying true to our 
-                  cooperative values.
-                </p>
-                
-                <p>
-                  Our commitment extends beyond banking – we actively participate in community 
-                  development initiatives, financial literacy programs, and sustainable business 
-                  practices that contribute to the overall growth and prosperity of our region.
+                <p className="text-gray-700 text-base">
+                  We actively invest in local development, financial literacy, and sustainable practices to ensure every member and our region thrive together.
                 </p>
               </div>
             </div>
@@ -94,7 +68,7 @@ const About = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-4xl font-bold text-center text-primary mb-16">Our Achievements</h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {/* Happy Members */}
             <div className="card card-hover p-8 text-center">
@@ -133,7 +107,7 @@ const About = () => {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-4xl font-bold text-center text-primary mb-16">What We Offer</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Savings Accounts */}
             <div className="card card-hover p-6 text-center">
