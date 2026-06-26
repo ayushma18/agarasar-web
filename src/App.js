@@ -9,28 +9,14 @@ import Contact from './components/Contact';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import AdminDashboard from './components/AdminDashboard';
-
-const News = () => {
-  return (
-    <div className="container-custom py-8">
-      <h1 className="text-4xl font-bold text-primary mb-4">News & Activities</h1>
-      <p className="text-lg text-gray-600">Stay updated with our latest news and activities.</p>
-    </div>
-  );
-};
-
-const Gallery = () => {
-  return (
-    <div className="container-custom py-8">
-      <h1 className="text-4xl font-bold text-primary mb-4">Gallery</h1>
-      <p className="text-lg text-gray-600">View our collection of photos from various events and activities.</p>
-    </div>
-  );
-};
+import News from './components/News';
+import Gallery from './components/Gallery';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -73,13 +73,13 @@ function Header() {
 
   return (
     <div className="fixed w-full top-0 z-50">
-      {/* Top Banner Area */}
-      <div className="bg-gradient-to-r from-orange-400 via-blue-500 to-orange-400 text-white py-3 relative overflow-hidden">
-        {/* Geometric Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-20 h-20 bg-white rounded-full transform -translate-x-10 -translate-y-10"></div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-300 transform translate-x-16 -translate-y-16 rotate-45"></div>
-          <div className="absolute bottom-0 left-1/4 w-16 h-16 bg-orange-300 rounded-full"></div>
+      {/* Top Banner Area - Modernized */}
+      <div className="bg-gradient-to-r from-blue-600 to-emerald-500 text-white py-2.5 relative overflow-hidden shadow-lg">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full transform -translate-x-16 -translate-y-16 animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-200 transform translate-x-12 -translate-y-12 rotate-45 animate-pulse animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/4 w-20 h-20 bg-sky-200 rounded-full animate-pulse animation-delay-4000"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -88,12 +88,12 @@ function Header() {
             {/* Left: Logo and Tagline */}
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-lg ring-2 ring-white/30">
                   <span className="text-blue-600 font-bold text-xl">अ</span>
                 </div>
                 <div>
-                  <div className="font-bold text-xl font-devanagari">अग्रसर सहकारी</div>
-                  <div className="text-sm opacity-90">Our Quest To Make Banking Better Starts Here</div>
+                  <div className="font-bold text-lg font-devanagari leading-tight">अग्रसर सहकारी</div>
+                  <div className="text-xs opacity-90 leading-tight">Making Banking Better</div>
                 </div>
               </div>
             </div>
@@ -130,53 +130,53 @@ function Header() {
         </div>
       </div>
 
-      {/* Navigation Bar */}
-      <nav className={`backdrop-blur-lg bg-white/60 border-b border-white/30 shadow-lg transition-all duration-300 ${isScrolled ? 'bg-white/80' : 'bg-white/40'
-        } rounded-b-2xl`}>
+      {/* Navigation Bar - Modernized */}
+      <nav className={`backdrop-blur-xl transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-xl' : 'bg-white/90 shadow-lg'
+        }`}>
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center">
 
             {/* Desktop Navigation Menu */}
-            <div className="hidden lg:flex items-center space-x-8 py-4">
+            <div className="hidden lg:flex items-center space-x-2 py-3">
               <button
                 onClick={() => handleNavigation('home')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 HOME
               </button>
               <button
                 onClick={() => handleNavigation('about')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 ABOUT US
               </button>
               <button
                 onClick={() => handleNavigation('services')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 SERVICES
               </button>
               <button
                 onClick={() => handleNavigation('gallery')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 GALLERY
               </button>
               <button
                 onClick={() => handleNavigation('contact')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 CONTACT
               </button>
               <button
                 onClick={() => handleNavigation('login')}
-                className="text-[#1E3A8A] hover:text-[#F97316] font-semibold uppercase tracking-wide text-base transition-all duration-300 px-4 py-2 rounded-full hover:bg-white/40 focus:outline-none"
+                className="text-gray-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm transition-all duration-300 px-5 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 LOGIN
               </button>
               <button
                 onClick={() => handleNavigation('register')}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 font-medium uppercase tracking-wide text-sm"
+                className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-2.5 rounded-lg transition-all duration-300 font-semibold uppercase tracking-wide text-sm shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 REGISTER
               </button>
@@ -184,7 +184,7 @@ function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden flex flex-col items-center justify-center p-4 text-white hover:text-orange-400 transition-colors duration-300"
+              className="lg:hidden flex flex-col items-center justify-center p-4 text-gray-700 hover:text-blue-600 transition-colors duration-300"
               onClick={toggleMenu}
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -200,16 +200,15 @@ function Header() {
 
           {/* Mobile Navigation Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-slate-700">
-              <div className="flex flex-col space-y-4">
-                <button onClick={() => handleNavigation('home')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">HOME</button>
-                <button onClick={() => handleNavigation('about')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">ABOUT US</button>
-                <button onClick={() => handleNavigation('services')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">SERVICES</button>
-                <button onClick={() => handleNavigation('news')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">NEWS & ACTIVITIES</button>
-                <button onClick={() => handleNavigation('contact')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">CONTACT</button>
-                <button onClick={() => handleNavigation('register')} className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium uppercase tracking-wide text-sm text-center">REGISTER</button>
-                <button onClick={() => handleNavigation('gallery')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">GALLERY</button>
-                <button onClick={() => handleNavigation('login')} className="text-left text-white hover:text-orange-400 py-2 font-medium uppercase tracking-wide text-sm">LOGIN</button>
+            <div className="lg:hidden py-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-2">
+                <button onClick={() => handleNavigation('home')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">HOME</button>
+                <button onClick={() => handleNavigation('about')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">ABOUT US</button>
+                <button onClick={() => handleNavigation('services')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">SERVICES</button>
+                <button onClick={() => handleNavigation('gallery')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">GALLERY</button>
+                <button onClick={() => handleNavigation('contact')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">CONTACT</button>
+                <button onClick={() => handleNavigation('login')} className="text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg font-medium uppercase tracking-wide text-sm transition-all">LOGIN</button>
+                <button onClick={() => handleNavigation('register')} className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold uppercase tracking-wide text-sm text-center shadow-lg">REGISTER</button>
               </div>
             </div>
           )}

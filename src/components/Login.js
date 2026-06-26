@@ -1,41 +1,82 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { apiUrl } from '../config';
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [accountNumber, setAccountNumber] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    
-    // For demo purposes, using hardcoded credentials
-    if (accountNumber === 'admin' && password === 'admin') {
-      navigate('/admin');
-    } else {
-      setError('Invalid credentials. Try using admin/admin');
+    setSuccess('');
+    setLoading(true);
+
+    try {
+      const response = await fetch(apiUrl('/api/login'), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          accountNumber,
+          password
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccess('Login successful! Redirecting...');
+        // Send email notification to admin
+        setTimeout(() => {
+          if (data.role === 'admin') {
+            navigate('/admin');
+          } else {
+            navigate('/');
+          }
+        }, 1500);
+      } else {
+        setError(data.message || 'Invalid credentials. Try using admin/admin');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('Unable to connect to server. Please make sure backend is running.');
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleRoleClick = (role) => {
-    setError('');
     if (role === 'Admin') {
       setAccountNumber('admin');
       setPassword('admin');
-      navigate('/admin');
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-emerald-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24">
       <div className="max-w-md w-full space-y-8">
-        
+
+        {/* Back Button */}
+        <button
+          onClick={() => navigate('/')}
+          className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+        >
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span className="font-medium">Back to Home</span>
+        </button>
+
         {/* Header Section */}
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-orange-500 rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-emerald-500 rounded-full mb-6">
             <span className="text-white text-3xl font-bold">अ</span>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
@@ -44,10 +85,10 @@ function Login() {
 
         {/* Login Form */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-4">
+          <div className="bg-gradient-to-r from-blue-600 to-emerald-500 px-6 py-4">
             <h2 className="text-xl font-bold text-white text-center">Customer Login</h2>
           </div>
-          
+
           <div className="p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {error && (
@@ -55,7 +96,13 @@ function Login() {
                   {error}
                 </div>
               )}
-              
+
+              {success && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm">
+                  {success}
+                </div>
+              )}
+
               <div className="space-y-2">
                 <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">
                   Account Number
@@ -105,11 +152,24 @@ function Login() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                disabled={loading}
+                className={`w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 <span className="flex items-center justify-center">
-                  <span className="mr-2">🔐</span>
-                  Sign In
+                  {loading ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Signing In...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="mr-2">🔐</span>
+                      Sign In
+                    </>
+                  )}
                 </span>
               </button>
             </form>
@@ -128,14 +188,14 @@ function Login() {
 
             {/* Role Options */}
             <div className="grid grid-cols-3 gap-4">
-              <div 
+              <div
                 className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-200"
                 onClick={() => handleRoleClick('Admin')}
               >
                 <div className="text-2xl mb-2">👨‍💼</div>
                 <div className="text-sm font-medium text-gray-700">Admin</div>
               </div>
-              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 cursor-pointer transition-all duration-200">
+              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 cursor-pointer transition-all duration-200">
                 <div className="text-2xl mb-2">💰</div>
                 <div className="text-sm font-medium text-gray-700">Cashier</div>
               </div>
@@ -150,8 +210,8 @@ function Login() {
         {/* Sign Up Link */}
         <div className="text-center">
           <p className="text-gray-600">
-            Don't have an account? 
-            <button 
+            Don't have an account?
+            <button
               onClick={() => navigate('/register')}
               className="ml-1 text-blue-600 hover:text-blue-500 font-medium"
             >
@@ -165,8 +225,8 @@ function Login() {
           <p>© अग्रसर सहकारी - {new Date().getFullYear()} All rights reserved</p>
           <p className="mt-1">Secure banking for a better future</p>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

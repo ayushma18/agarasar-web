@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Gallery = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('all');
 
   const galleryItems = [
@@ -105,7 +107,7 @@ const Gallery = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-orange-400 text-slate-800 shadow-lg'
+                    ? 'bg-emerald-500 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -142,7 +144,7 @@ const Gallery = () => {
                     
                     {/* Category Badge */}
                     <div className="absolute top-4 right-4">
-                      <span className="bg-orange-400 text-slate-800 px-3 py-1 rounded-full text-sm font-semibold capitalize">
+                      <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
                         {item.category}
                       </span>
                     </div>
@@ -175,22 +177,22 @@ const Gallery = () => {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             
             <div>
-              <div className="text-4xl font-bold text-orange-400 mb-2">500+</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">500+</div>
               <div className="text-gray-300">Photos Captured</div>
             </div>
             
             <div>
-              <div className="text-4xl font-bold text-orange-400 mb-2">50+</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">50+</div>
               <div className="text-gray-300">Events Documented</div>
             </div>
             
             <div>
-              <div className="text-4xl font-bold text-orange-400 mb-2">15</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">15</div>
               <div className="text-gray-300">Years of Memories</div>
             </div>
             
             <div>
-              <div className="text-4xl font-bold text-orange-400 mb-2">1000+</div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">1000+</div>
               <div className="text-gray-300">Community Members</div>
             </div>
           </div>
@@ -207,10 +209,10 @@ const Gallery = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-400 hover:bg-orange-500 text-slate-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button onClick={() => navigate('/contact')} className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Submit Photos
             </button>
-            <button className="border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-slate-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+            <button onClick={() => navigate('/contact')} className="border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
               Contact Us
             </button>
           </div>

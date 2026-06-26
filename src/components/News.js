@@ -101,7 +101,7 @@ const News = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-400 text-slate-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {news.category}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ const News = () => {
                   <div className="text-gray-500 text-sm mb-2">{news.date}</div>
                   <h3 className="text-xl font-bold text-slate-800 mb-3 line-clamp-2">{news.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-4">{news.excerpt}</p>
-                  <button className="text-orange-400 hover:text-orange-500 font-semibold transition-colors duration-300">
+                  <button className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-300">
                     Read More →
                   </button>
                 </div>
@@ -129,14 +129,14 @@ const News = () => {
           
           <div className="max-w-4xl mx-auto space-y-6">
             {activities.map((activity, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl border-l-4 border-orange-400 hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-gray-50 p-6 rounded-xl border-l-4 border-emerald-500 hover:shadow-lg transition-shadow duration-300">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-slate-800 mb-2">{activity.title}</h3>
                     <p className="text-gray-600">{activity.description}</p>
                   </div>
                   <div className="mt-4 md:mt-0 md:ml-6">
-                    <div className="bg-orange-400 text-slate-800 px-4 py-2 rounded-lg font-semibold text-center">
+                    <div className="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold text-center">
                       {activity.date}
                     </div>
                   </div>
@@ -160,9 +160,9 @@ const News = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent outline-none text-white placeholder-gray-400"
+                className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-white placeholder-gray-400"
               />
-              <button className="bg-orange-400 hover:bg-orange-500 px-6 py-3 rounded-r-lg transition-colors duration-300 font-semibold text-slate-800">
+              <button className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-r-lg transition-colors duration-300 font-semibold text-slate-800">
                 Subscribe
               </button>
             </div>
