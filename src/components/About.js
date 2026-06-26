@@ -14,7 +14,7 @@ const About = () => {
     np: 'सन्तोष पुडासैनी',
     role: 'Chairman & General Manager',
     roleNp: 'अध्यक्ष तथा प्रमुख कार्यकारी',
-    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=facearea&facepad=2.5&w=400&h=400&q=80',
+    photo: '/team/santosh.jpg',
     message:
       'At Agarasar Cooperative, our members are family. For over a decade we have worked to make banking simple, transparent and accessible for every Nepali household. Your trust drives everything we do.'
   };
